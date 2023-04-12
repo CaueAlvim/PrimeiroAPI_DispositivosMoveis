@@ -5,3 +5,6 @@ yarn typeorm migration:create -n  ‘Nome da Migration’
 
 ***Executando  Migrations:*** <br>
 yarn typeorm migrations:run
+
+***Revertendo Migrations:*** <br>
+yarn typeorm migration:revert
