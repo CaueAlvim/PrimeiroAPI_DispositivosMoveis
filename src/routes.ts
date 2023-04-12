@@ -59,31 +59,35 @@ const router = Router();
 
 router.post("/login", autenticationUserController.handle);
 router.post("/users", createUserController.handle);
+router.post('/categories', createCategoryController.handle);
+router.post('/products', createProductController.handle);
+router.post('/sales', createSalesController.handle);
+router.post('/delivery', createDeliveryController.handle);
+
 
 router.use(ensureAuthenticated)
 router.get("/users", listUsersController.handle);
 router.put("/users", updateUserController.handle);
-router.use(ensureAdmin)
-router.delete("/users/:id", deleteUserController.handle);
 
 router.get('/categories', listCategoryController.handle);
-router.post('/categories', createCategoryController.handle);
 router.put('/categories', updateCategoryController.handle);
-router.delete('/categories/:id', deleteCategoryController.handle);
 
 router.get('/products', listProductsController.handle);
-router.post('/products', createProductController.handle);
 router.put('/products', updateProductController.handle);
-router.delete('/products/:id', deleteProductController.handle);
 
 router.get('/sales', listSalesController.handle);
-router.post('/sales', createSalesController.handle);
 router.put('/sales', updateSalesController.handle);
-router.delete('/sales/:id', deleteSalesController.handle);
 
 router.get('/delivery', listDeliveryController.handle);
-router.post('/delivery', createDeliveryController.handle);
 router.put('/delivery', updateDeliveryController.handle);
+
+
+router.use(ensureAdmin)
+router.delete('/categories/:id', deleteCategoryController.handle);
+router.delete("/users/:id", deleteUserController.handle);
+router.delete('/products/:id', deleteProductController.handle);
+router.delete('/sales/:id', deleteSalesController.handle);
 router.delete('/delivery/:id', deleteDeliveryController.handle);
+
 
 export {router}
