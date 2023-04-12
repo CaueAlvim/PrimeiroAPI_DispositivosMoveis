@@ -4,7 +4,7 @@
 yarn typeorm migration:create -n  ‘Nome da Migration’
 
 ***Executando  Migrations:*** <br>
-yarn typeorm migrations:run
+yarn typeorm migration:run
 
-***Revertendo Migrations:*** <br>
+***Revertendo Migrations, nem funciona mais deixa ai*** <br>
 yarn typeorm migration:revert
