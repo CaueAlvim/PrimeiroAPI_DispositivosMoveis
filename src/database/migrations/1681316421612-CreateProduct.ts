@@ -3,6 +3,7 @@ import {MigrationInterface, QueryRunner, Table} from "typeorm";
 export class CreateProduct1681316421612 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.createTable(
         new Table({
             name: 'products',
             columns: [
@@ -39,6 +40,7 @@ export class CreateProduct1681316421612 implements MigrationInterface {
                 },
             ]
         })
+        )
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
