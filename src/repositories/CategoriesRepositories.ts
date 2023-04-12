@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { Category } from '../../src/entities/Category';
+import { Category } from '../entities/Category';
 
 @EntityRepository(Category)
 class CategoriesRepositories extends Repository<Category> {}

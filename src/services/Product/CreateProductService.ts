@@ -2,7 +2,6 @@ import { getCustomRepository } from 'typeorm';
 import { ProductsRepositories } from '../../repositories/ProductsRepositories';
 
 interface IProductRequest {
-	idCategory: string;
 	name: string;
 	description: string;
 	price: number;
@@ -11,7 +10,6 @@ interface IProductRequest {
 
 class CreateProductService {
 	async execute({
-		idCategory,
 		name,
 		description,
 		price,
@@ -26,7 +24,6 @@ class CreateProductService {
 		}
 
 		const newProduct = productRepository.create({
-			idCategory,
 			name,
 			description,
 			price,

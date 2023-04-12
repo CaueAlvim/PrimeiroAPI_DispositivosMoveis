@@ -16,9 +16,6 @@ class Product {
 	@PrimaryColumn({ type: 'uuid' })
 	readonly id!: string;
 
-	@Column({ type: 'uuid' })
-	idCategory!: string;
-
 	@Column({ type: 'varchar' })
 	name!: string;
 

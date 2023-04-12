@@ -1,7 +1,7 @@
 import { classToPlain } from "class-transformer";
 import { json } from "express";
 import { getCustomRepository } from "typeorm";
-import { UsersRepositories } from "../repositories/UsersRepositories";
+import { UsersRepositories } from "../../repositories/UsersRepositories";
 
 interface IUserDelete {
     id: string;

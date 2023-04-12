@@ -1,5 +1,5 @@
 import { EntityRepository, Repository } from 'typeorm';
-import { Delivery } from '../../src/entities/Delivery';
+import { Delivery } from '../entities/Delivery';
 
 @EntityRepository(Delivery)
 class DeliveriesRepositories extends Repository<Delivery> {}

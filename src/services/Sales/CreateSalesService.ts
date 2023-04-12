@@ -2,22 +2,22 @@ import { getCustomRepository } from 'typeorm';
 import { SalesRepositories } from '../../repositories/SalesRepositories';
 
 interface ISalesRequest {
-	idProduct: string;
-	idUser: string;
+	productId: string;
+	userId: string;
 	total: number;
 	description: string;
 	obs: string;
 }
 
 class CreateSalesService {
-	async execute({ idProduct, idUser, total, description, obs }: ISalesRequest) {
+	async execute({ productId, userId, total, description, obs }: ISalesRequest) {
 		const salesRepository = getCustomRepository(SalesRepositories);
 
-		if (!idProduct) {
+		if (!productId) {
 			throw new Error('Product ID is required.');
 		}
 
-		if (!idUser) {
+		if (!userId) {
 			throw new Error('User ID is required.');
 		}
 
@@ -34,8 +34,8 @@ class CreateSalesService {
 		}
 
 		const newSale = salesRepository.create({
-			idProduct,
-			idUser,
+			productId,
+			userId,
 			total,
 			description,
 			obs,

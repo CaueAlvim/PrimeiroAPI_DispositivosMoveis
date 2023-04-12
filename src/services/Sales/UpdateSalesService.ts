@@ -4,8 +4,8 @@ import { SalesRepositories } from '../../repositories/SalesRepositories';
 
 interface ISalesRequest {
 	id: string;
-	idProduct: string;
-	idUser: string;
+	productId: string;
+	userId: string;
 	total: number;
 	description: string;
 	obs: string;
@@ -14,8 +14,8 @@ interface ISalesRequest {
 class UpdateSalesService {
 	async execute({
 		id,
-		idProduct,
-		idUser,
+		productId,
+		userId,
 		total,
 		description,
 		obs,
@@ -23,10 +23,10 @@ class UpdateSalesService {
 		if (!id) {
 			throw new Error('id obrigatorio');
 		}
-		if (!idProduct) {
+		if (!productId) {
 			throw new Error('ID do produto obrigatorio');
 		}
-		if (!idUser) {
+		if (!userId) {
 			throw new Error('ID do usuário obrigatorio');
 		}
 		if (!total) {
@@ -41,8 +41,8 @@ class UpdateSalesService {
 		const result = await salesRepository
 			.createQueryBuilder()
 			.update({
-				idProduct: idProduct,
-				idUser: idUser,
+				productId: productId,
+				userId: userId,
 				total: total,
 				description: description,
 				obs: obs,

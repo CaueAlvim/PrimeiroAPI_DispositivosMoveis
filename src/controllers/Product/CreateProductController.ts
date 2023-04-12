@@ -3,14 +3,11 @@ import { CreateProductService } from '../../services/Product/CreateProductServic
 
 class CreateProductController {
 	async handle(request: Request, response: Response) {
-		const { idCategory, name, description, price, url } = request.body;
+		const { name, description, price, url } = request.body;
 
 		const createProductService = new CreateProductService();
 
-		const idCat = idCategory.toString();
-
 		const product = await createProductService.execute({
-			idCategory: idCat,
 			name,
 			description,
 			price,

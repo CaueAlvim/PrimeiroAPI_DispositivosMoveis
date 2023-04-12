@@ -3,7 +3,6 @@ import { ProductsRepositories } from '../../repositories/ProductsRepositories';
 
 interface IProductRequest {
 	id: string;
-	idCategory: string;
 	name: string;
 	description: string;
 	price: number;
@@ -13,7 +12,6 @@ interface IProductRequest {
 class UpdateProductService {
 	async execute({
 		id,
-		idCategory,
 		name,
 		description,
 		price,
@@ -21,9 +19,6 @@ class UpdateProductService {
 	}: IProductRequest) {
 		if (!id) {
 			throw new Error('Product ID is required');
-		}
-		if (!idCategory) {
-			throw new Error('Product category ID is required');
 		}
 		if (!name) {
 			throw new Error('Name is required');
@@ -43,7 +38,6 @@ class UpdateProductService {
 		const result = await productRepository
 			.createQueryBuilder()
 			.update({
-				idCategory: idCategory,
 				name: name,
 				description: description,
 				price: price,

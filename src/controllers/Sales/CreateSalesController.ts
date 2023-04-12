@@ -3,13 +3,13 @@ import { CreateSalesService } from '../../services/Sales/CreateSalesService';
 
 class CreateSalesController {
 	async handle(request: Request, response: Response) {
-		const { idProduct, idUser, total, description, obs } = request.body;
+		const { productId, userId, total, description, obs } = request.body;
 
 		const createSalesService = new CreateSalesService();
 
 		const Sales = await createSalesService.execute({
-			idProduct,
-			idUser,
+			productId,
+			userId,
 			total,
 			description,
 			obs,

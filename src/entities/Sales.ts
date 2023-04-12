@@ -17,10 +17,10 @@ class Sales {
 	readonly id!: string;
 
 	@Column()
-	idProduct!: string;
+	productId!: string;
 
 	@Column()
-	idUser!: string;
+	userId!: string;
 
 	@Column()
 	total!: number;
